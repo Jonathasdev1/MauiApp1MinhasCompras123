@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace MauiApp1MinhasCompras123
+﻿namespace MauiApp1MinhasCompras123
 {
     public partial class App : Application
     {
@@ -11,7 +9,9 @@ namespace MauiApp1MinhasCompras123
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            var window = new Window(new NavigationPage(new Views.ListaProduto()));
+            window.Title = "Lista Produto";
+            return window;
         }
     }
 }
